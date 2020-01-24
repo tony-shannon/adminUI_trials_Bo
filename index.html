@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple Shadow DOM Example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="header.js" defer></script>
+    <!-- <script src="body.js" defer></script> -->
+    <script src="script.js" defer></script>
+  </head>  
+  <body>
+    <template id="component-header">
+      <style>
+        :host {
+          display: block;
+        }
+        header {
+            position: fixed !important;
+            width: 100%;
+            z-index: 2000;
+            padding: 10px;
+        }
+        .navbar{
+            background: #333;
+        }
+        .container{
+            margin: 0px 100px;
+        }
+        .navbar-brand {
+            font-size: 30px;
+            color: aquamarine;
+        }
+      </style>
+
+        <div id="header">
+            <header class="navbar navbar-inverse  bs-docs-nav" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand">Web Component/Vue Admin UI Demo</a>
+                </div>
+            </div>
+        </header>
+        </div>
+    </template>
+    <header-component></header-component>
+    <div id="body" style="padding-top:60px">
+        <div id="wrapper">
+    
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li >
+                        <a href="#" onclick="select_type(1)">Users </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="select_type(2)">Posts</a>
+                    </li>
+                    <li>
+                        <a href="#">Comments</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+    
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <!-- <div class="row"> -->
+                        <div class="col-md-12" style="display:flex">
+                            <div class="col-md-7 main">
+                                <div id="user_table">
+                                    <p class="title">User</p>
+                                    <table  class="table  table-striped  table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>UserID</th>
+                                            <th>Name</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id = "user_table_data">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="post_table">
+                                    <p class="title">Post</p>
+                                    <table  class="table  table-striped  table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>PostId</th>
+                                            <th>Title</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id = "post_table_data">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                    
+                            </div>
+                            <div class="col-md-5 detail">
+                                <div id="user_detail">
+                                    <p class="title">User Detail</p>
+                                    <div class="detail-data" id="user_detail_data">
+
+                                    </div>
+                                </div>
+
+                                <div id="post_detail">
+                                    <p class="title">Post Detail</p>
+                                    <div class="detail-data" id="post_detail_data">
+                                         
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+    
+        </div>
+        <!-- /#wrapper -->
+      </div>
+
+    
+
+    <!-- <awesome-button></awesome-button> -->
+  </body>
+</html>
